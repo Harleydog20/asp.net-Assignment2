@@ -25,7 +25,7 @@ namespace Everpass
             try
             {
                 //connect using our connection string from web.config and EF context class
-                using (DefaultConnection conn = new DefaultConnection())
+                using (DefaultConnectionEF conn = new DefaultConnectionEF())
                 {
                     //use link to query the Departments model
                     var pass = from p in conn.Passwords1
@@ -47,7 +47,7 @@ namespace Everpass
             try
             {
                 //connect
-                using (DefaultConnection conn = new DefaultConnection())
+                using (DefaultConnectionEF conn = new DefaultConnectionEF())
                 {
                     //get the selected DepartmentID
                     Int32 PasswordID = Convert.ToInt32(grdPasswords.DataKeys[e.RowIndex].Values["PasswordID"]);

@@ -11,7 +11,16 @@ namespace Everpass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                plhPrivate.Visible = true;
+                plhPublic.Visible = false;
+            }
+            else
+            {
+                plhPrivate.Visible = false;
+                plhPublic.Visible = true;
+            }
         }
     }
 }

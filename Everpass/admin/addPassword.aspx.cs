@@ -30,7 +30,7 @@ namespace Everpass
             try
             {
                 //connect
-                using (DefaultConnection conn = new DefaultConnection())
+                using (DefaultConnectionEF conn = new DefaultConnectionEF())
                 {
                     //get id from url parameter and store in a variable
                     Int32 PasswordID = Convert.ToInt32(Request.QueryString["PasswordID"]);
@@ -54,10 +54,10 @@ namespace Everpass
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-           // try
-            //{
+            try
+            {
                 //connect
-                using (DefaultConnection conn = new DefaultConnection())
+                using (DefaultConnectionEF conn = new DefaultConnectionEF())
                 {
                     //instantiate a new deparment object in memory
                     Passwords p = new Passwords();
@@ -85,13 +85,14 @@ namespace Everpass
                     conn.SaveChanges();
 
                     //redirect to updated departments page
-                    Response.Redirect("home.aspx");
+                    Response.Redirect("/admin/home.aspx");
                 }
-           // }
-           // catch
-          //  {
-           //     Response.Redirect("/error.aspx");
-          //  }
+            }
+            catch
+            {
+                //Response.Redirect("/error.aspx");
+                                
+            }
         }
     }
 }
