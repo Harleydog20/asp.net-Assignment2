@@ -49,7 +49,6 @@ namespace Everpass
                 //connect
                 using (DefaultConnectionEF conn = new DefaultConnectionEF())
                 {
-                    //get the selected DepartmentID
                     Int32 PasswordID = Convert.ToInt32(grdPasswords.DataKeys[e.RowIndex].Values["PasswordID"]);
 
                     var p = (from pas in conn.Passwords1

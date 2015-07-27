@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Register</h1>
     <h6>All feilds are required</h6>
-
+    <br />
     <div class="form-group-lg">
         <asp:label ID="lblStatus" runat="server" CssClass="label label-info"></asp:label>
     </div>

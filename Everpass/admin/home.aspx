@@ -3,8 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Home</h1>
-    <a href="addPassword.aspx">Add Password</a>
-    
+
+    <div class="well">
+        <p>This is your password hub, you can edit or delete passwords using the tools on the right-most columns, or create a new one with the link below or in the nav bar.
+        </p>
+    </div>
+
+    <a href="addPassword.aspx">Add Password</a>    
     <asp:GridView ID="grdPasswords" runat="server" CssClass="table table-striped"
         AutoGenerateColumns="false" OnRowDeleting="grdPasswords_RowDeleting" DataKeyNames="PasswordID">
         <Columns>

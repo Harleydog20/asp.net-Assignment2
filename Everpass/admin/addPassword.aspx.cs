@@ -39,7 +39,7 @@ namespace Everpass
                              where pas.PasswordID == PasswordID
                              select pas).FirstOrDefault();
 
-                    //populate the form from our department object
+                    //populate the form
                     txtWebsiteName.Text = p.WebsiteName;
                     txtPassword.Text = p.UserPassword;
                     ddlSecurityLevel.SelectedValue = p.SecurityLevel.ToString();
@@ -59,10 +59,10 @@ namespace Everpass
                 //connect
                 using (DefaultConnectionEF conn = new DefaultConnectionEF())
                 {
-                    //instantiate a new deparment object in memory
+                    //create a new password object
                     Passwords p = new Passwords();
 
-                    //decide if updating or adding, then save
+                    //decide if updating or adding
                     if (Request.QueryString.Count > 0)
                     {
                         Int32 PasswordID = Convert.ToInt32(Request.QueryString["PasswordID"]);

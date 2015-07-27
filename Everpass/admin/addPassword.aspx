@@ -2,10 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Department Details</h1>
-
-    <h5>All fields are required</h5>
-
+    <h1>Add a new password</h1>
+    <h6>All fields are required</h6>
+    <br />
     <div class="form-group">
         <label for="txtWebsiteName" class="col-sm-3">Website Name:</label>
         <asp:TextBox ID="txtWebsiteName" runat="server" required="true" MaxLength="50" />

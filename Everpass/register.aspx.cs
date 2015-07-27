@@ -19,7 +19,7 @@ namespace Everpass
         }
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            // Default UserStore constructor uses the default connection string named: DefaultConnectionEFEFEF
+            // Default UserStore constructor uses the default connection string
             var userStore = new UserStore<IdentityUser>();
             var manager = new UserManager<IdentityUser>(userStore);
 

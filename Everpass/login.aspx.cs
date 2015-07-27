@@ -23,6 +23,7 @@ namespace Everpass
             var userManager = new UserManager<IdentityUser>(userStore);
             var user = userManager.Find(txtUsername.Text, txtPassword.Text);
 
+            //check if valid information is in the user variable, i.e. not blank
             if (user != null)
             {
                 var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
@@ -30,6 +31,7 @@ namespace Everpass
 
                 authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
                 Response.Redirect("/admin/home.aspx");
+                //once signed in go straight to the home page
             }
             else
             {

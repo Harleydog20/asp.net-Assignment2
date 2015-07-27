@@ -42,6 +42,7 @@ namespace Everpass
                 if (404 == errorCode)
                 {
                     Server.ClearError();
+                    //send user to the 404 error pge
                     Server.Transfer("/404.aspx");
                 }
 
